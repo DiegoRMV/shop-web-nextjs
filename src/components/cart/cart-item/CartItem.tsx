@@ -8,7 +8,7 @@ interface Props {
 
 export const CartItem = ({ product }: Props) => {
 	return (
-		<div className="flex mb-5" key={product.slug}>
+		<div className="flex mb-5 shadow-xl" key={product.slug}>
 			<Image
 				src={`/products/${product.images[0]}`}
 				width={100}

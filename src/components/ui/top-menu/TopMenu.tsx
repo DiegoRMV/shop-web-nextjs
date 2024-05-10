@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { titleFont } from "@/config/fonts";
 import { useUiNavbar, useUiStore } from "@/store";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
-import { DarkModee } from "../dark-mode/DarkModee";
+// import { DarkModee } from "../dark-mode/DarkModee";
 import { DarkMode } from "../dark-mode/DarkMode";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ export const TopMenu = () => {
 	const openMenu = useUiStore((state) => state.openSideMenu);
 	const quantity = useUiNavbar((state) => state.isQuantity);
 	const [valueSearch, setValueSearch] = useState("");
-	const router = useRouter()
+	const router = useRouter();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -35,7 +35,7 @@ export const TopMenu = () => {
 	}, []);
 
 	const toggleSearch = () => {
-		router.push(`/search/${valueSearch}`);
+		router.push(`/products/${valueSearch}`);
 	};
 
 	return (
@@ -84,7 +84,7 @@ export const TopMenu = () => {
 			</div>
 
 			<div className="flex items-center justify-end lg:w-1/3">
-				<div className="hidden md:flex justify-center items-center border ">
+				<div className="hidden md:flex justify-center items-center border dark:border-white border-black">
 					<IoSearchOutline size={24} className="mx-1" />
 					<input
 						id="search"
@@ -96,7 +96,7 @@ export const TopMenu = () => {
 						value={valueSearch}
 						onChange={(e) => setValueSearch(e.target.value)}
 						placeholder="Buscar"
-						className="py-2 text-xs bg-transparent outline-none flex"
+						className="py-2 text-xs bg-transparent outline-none flex placeholder:text-gray-900 dark:placeholder:text-gray-400"
 					/>
 				</div>
 

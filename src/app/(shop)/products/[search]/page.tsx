@@ -17,8 +17,7 @@ export default function Search({ params }: Props) {
 
 	return (
 		<>
-			<Title title={`Resultados de Busqueda: ${search}`} className="mb-2" />
-
+			<Title title={`Busqueda: ${search}`} className="mb-2" />
 			<ProductGrid products={result} />
 		</>
 	);

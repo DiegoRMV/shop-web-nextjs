@@ -56,7 +56,7 @@ export const Sidebar = () => {
 							if (e.keyCode === 13) closeMenu();
 						}}
 						placeholder="Buscar"
-						className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
+						className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400 text-gray-950"
 					/>
 				</div>
 				<Link

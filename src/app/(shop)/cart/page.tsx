@@ -3,7 +3,6 @@ import { CartItem, OrderSummary, Title } from "@/components";
 import { useStorage } from "@/hook/useStorage";
 import { useUiNavbar } from "@/store";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Cart() {
@@ -15,7 +14,6 @@ export default function Cart() {
 		quantityCart(userData?.cart.length || 0)
 	}, [INITIAL]);
 
-	console.log(userData)
 	return (
 		<div className="flex justify-center items-center mb-72 sm:px-10 px-4">
 			<div className="flex flex-col w-[1000px]">
