@@ -4,19 +4,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { titleFont } from "@/config/fonts";
 import { useUiNavbar, useUiStore } from "@/store";
-import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
-// import { DarkModee } from "../dark-mode/DarkModee";
 import { DarkMode } from "../dark-mode/DarkMode";
+import { IoCartOutline } from "react-icons/io5";
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
+import SearchBar from "../search-bar/SearchBar";
 
 export const TopMenu = () => {
 	const TOP_OFFSET = 50;
 	const [showBackground, setShowBackground] = useState(false);
 	const openMenu = useUiStore((state) => state.openSideMenu);
 	const quantity = useUiNavbar((state) => state.isQuantity);
-	const [valueSearch, setValueSearch] = useState("");
-	const router = useRouter();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -33,10 +30,6 @@ export const TopMenu = () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
-
-	const toggleSearch = () => {
-		router.push(`/products/${valueSearch}`);
-	};
 
 	return (
 		<nav
@@ -84,22 +77,7 @@ export const TopMenu = () => {
 			</div>
 
 			<div className="flex items-center justify-end lg:w-1/3">
-				<div className="hidden md:flex justify-center items-center border dark:border-white border-black">
-					<IoSearchOutline size={24} className="mx-1" />
-					<input
-						id="search"
-						name="search"
-						type="text"
-						onKeyUp={(e) => {
-							if (e.keyCode === 13) toggleSearch();
-						}}
-						value={valueSearch}
-						onChange={(e) => setValueSearch(e.target.value)}
-						placeholder="Buscar"
-						className="py-2 text-xs bg-transparent outline-none flex placeholder:text-gray-900 dark:placeholder:text-gray-400"
-					/>
-				</div>
-
+				<SearchBar />
 				<Link
 					href={"/cart"}
 					className="my-2 mx-1 p-2 rounded-md transition-all hover:bg-gray-100 dark:hover:bg-neutral-800 hidden lg:block"
