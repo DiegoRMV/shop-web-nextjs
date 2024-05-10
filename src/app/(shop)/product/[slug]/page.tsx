@@ -28,7 +28,7 @@ export default function Product({ params }: Props) {
 	const { ADD } = useStorage();
 	const addCart = () => {
 		ADD(q);
-		console.log(localStorage.getItem("userShop"))
+		console.log(localStorage.getItem("userShop"));
 	};
 
 	if (!product) {
@@ -38,7 +38,6 @@ export default function Product({ params }: Props) {
 		res();
 		addquantity(product);
 	}, []);
-
 
 	return (
 		<div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">

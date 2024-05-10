@@ -20,8 +20,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 export const Sidebar = () => {
 	const isSideMenuOpen = useUiStore((state) => state.isSideMenuOpen);
 	const closeMenu = useUiStore((state) => state.closeSideMenu);
-	const setDropdown = useUiStore((state)=> state.dropdown)
-	const dropdown = useUiStore((state)=> state.isDropdown)
+	const setDropdown = useUiStore((state) => state.dropdown);
+	const dropdown = useUiStore((state) => state.isDropdown);
 
 	const router = useRouter();
 	const pathname = usePathname();
@@ -130,7 +130,7 @@ export const Sidebar = () => {
 				>
 					<IoShirtOutline size={30} />
 					<span className="mx-3 text-xl">Productos</span>
-					<RiArrowDropDownLine size={32}/>
+					<RiArrowDropDownLine size={32} />
 				</button>
 
 				<div

@@ -1,11 +1,10 @@
 "use client";
 import { IoSearchOutline } from "react-icons/io5";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function SearchBar() {
 	const router = useRouter();
-	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
 	const search = searchParams.get("search") ?? "";
@@ -13,7 +12,7 @@ export default function SearchBar() {
 
 	const handleSearch = (e: void) => {
 		const newUrl = new URLSearchParams(searchParams);
-		
+
 		if (valueSearch.trim() === "") {
 			newUrl.delete("search");
 		} else {

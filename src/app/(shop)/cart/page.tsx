@@ -11,7 +11,7 @@ export default function Cart() {
 
 	useEffect(() => {
 		INITIAL();
-		quantityCart(userData?.cart.length || 0)
+		quantityCart(userData?.cart.length || 0);
 	}, [INITIAL]);
 
 	return (

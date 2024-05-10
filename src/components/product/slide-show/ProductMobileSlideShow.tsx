@@ -19,7 +19,6 @@ export const ProducMobiletSlideShow = ({ images, title, className }: Props) => {
 	return (
 		<div className={`${className}`}>
 			<Swiper
-				
 				pagination={{
 					clickable: true,
 				}}
