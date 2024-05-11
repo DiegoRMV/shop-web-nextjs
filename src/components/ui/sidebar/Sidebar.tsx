@@ -2,8 +2,7 @@
 import { useUiStore } from "@/store";
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense } from "react";
 import {
 	IoCartOutline,
 	IoCloseOutline,
@@ -11,35 +10,17 @@ import {
 	IoLogOutOutline,
 	IoPeopleOutline,
 	IoPersonOutline,
-	IoSearchOutline,
 	IoShirtOutline,
 	IoTicketOutline,
 } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import SearchSidebar from "../search-bar/SearchSidebar";
 
 export const Sidebar = () => {
 	const isSideMenuOpen = useUiStore((state) => state.isSideMenuOpen);
 	const closeMenu = useUiStore((state) => state.closeSideMenu);
 	const setDropdown = useUiStore((state) => state.dropdown);
 	const dropdown = useUiStore((state) => state.isDropdown);
-
-	const router = useRouter();
-	const pathname = usePathname();
-	const searchParams = useSearchParams();
-
-	const search = searchParams.get("search") ?? "";
-	const [valueSearch, setValueSearch] = useState("");
-
-	const handleSearch = (e: void) => {
-		const newUrl = new URLSearchParams(searchParams);
-		if (valueSearch.trim() === "") {
-			newUrl.delete("search");
-		} else {
-			newUrl.set("search", valueSearch);
-		}
-
-		router.push(`/?${newUrl.toString()}`);
-	};
 
 	return (
 		<div>
@@ -67,26 +48,10 @@ export const Sidebar = () => {
 					onClick={closeMenu}
 				/>
 
-				<div className="relative mt-14">
-					<IoSearchOutline
-						size={20}
-						className="absolute top-2 left-2 text-slate-500"
-					/>
-					<input
-						name="search"
-						type="text"
-						defaultValue={search}
-						onChange={(e) => setValueSearch(e.target.value)}
-						onKeyDown={(e) => {
-							if (e.keyCode === 13) {
-								handleSearch(e.preventDefault());
-								closeMenu();
-							}
-						}}
-						placeholder="Buscar"
-						className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400 text-gray-950"
-					/>
-				</div>
+				<Suspense fallback={<>placehoder</>}>
+					<SearchSidebar />
+				</Suspense>
+
 				<Link
 					href={"/"}
 					onClick={closeMenu}

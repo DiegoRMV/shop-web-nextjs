@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { titleFont } from "@/config/fonts";
 import { useUiNavbar, useUiStore } from "@/store";
 import { DarkMode } from "../dark-mode/DarkMode";
@@ -77,7 +77,9 @@ export const TopMenu = () => {
 			</div>
 
 			<div className="flex items-center justify-end lg:w-1/3">
-				<SearchBar />
+				<Suspense fallback={<>placeholder</>}>
+					<SearchBar />
+				</Suspense>
 				<Link
 					href={"/cart"}
 					className="my-2 mx-1 p-2 rounded-md transition-all hover:bg-gray-100 dark:hover:bg-neutral-800 hidden lg:block"

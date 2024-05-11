@@ -1,19 +1,26 @@
 "use client";
 import { ProductGrid, Title } from "@/components";
 import { initialData } from "@/seed/seed";
-import { useSearchParams } from "next/navigation";
 
 const products = initialData.products;
 
-export default function Home() {
-	const search = useSearchParams().get("search") ?? "";
+export default function Home({
+	searchParams,
+}: {
+	searchParams: { search?: string };
+}) {
+	const search = searchParams.search;
+	console.log(search);
 	let subtitle = "Todos los Productos";
 	if (search) {
 		subtitle = `Buscar: ${search}`;
 	}
 
 	let result = products.filter((product) =>
-		product.title.toLowerCase().replace("'s", "").includes(search.toLowerCase())
+		product.title
+			.toLowerCase()
+			.replace("'s", "")
+			.includes(search?.toLowerCase() || "")
 	);
 
 	return (
