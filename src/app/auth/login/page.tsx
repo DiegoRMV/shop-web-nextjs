@@ -21,7 +21,7 @@ export default function Login() {
 			<div className="flex flex-col">
 				<label htmlFor="email">Correo electrónico</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5 text-black"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="email"
 					placeholder="jhondoe@gmail.com"
 				/>
@@ -29,11 +29,11 @@ export default function Login() {
 				<label htmlFor="password">Contraseña</label>
 				<div className="relative mb-5 p-0">
 					<input
-						className="border px-5 py-2 bg-gray-200 rounded w-full"
+						className="border px-5 py-2 bg-gray-200 rounded w-full dark:text-black"
 						type={isShow ? "text " : "password"}
 						placeholder="******"
 					/>
-					<button className="absolute top-3 right-3" onClick={switchShow}>
+					<button className="absolute top-3 right-3 dark:text-black" onClick={switchShow}>
 						{!isShow ? (
 							<FaRegEye
 								size={20}

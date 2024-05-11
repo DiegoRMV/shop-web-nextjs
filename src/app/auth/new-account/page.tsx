@@ -9,13 +9,13 @@ export default function NewAccount() {
 			<div className="flex flex-col">
 				<label htmlFor="text">Nombre Completo</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="text"
 					placeholder="john Doe"
 				/>
 				<label htmlFor="email">Correo Electronico</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="email"
 					placeholder="jhondoe@gmail.com"
 				/>
@@ -23,18 +23,17 @@ export default function NewAccount() {
 				<label htmlFor="password">Contraseña</label>
 				<input
 					name="password"
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="text"
 					placeholder="******"
 				/>
 				<label htmlFor="repeatPassword">Repetir Contraseña</label>
 				<input
 					name="repeatPassword"
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="text"
 					placeholder="******"
 				/>
-
 				<button className="btn-primary">Crear Cuenta</button>
 
 				{/* divisor l ine */}

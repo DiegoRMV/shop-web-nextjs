@@ -21,13 +21,13 @@ export default function Profile() {
 			<div className="flex flex-col">
 				<label htmlFor="text">Nombre Completo</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="text"
 					defaultValue={profile.name}
 				/>
 				<label htmlFor="email">Correo Electronico</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
 					type="email"
 					defaultValue={profile.email}
 				/>
@@ -35,11 +35,11 @@ export default function Profile() {
 				<label htmlFor="password">Contraseña</label>
 				<div className="relative mb-5 p-0">
 					<input
-						className="border px-5 py-2 bg-gray-200 rounded w-full"
+						className="border px-5 py-2 bg-gray-200 rounded w-full dark:text-black"
 						type={isShow ? "text " : "password"}
 						defaultValue={profile.password}
 					/>
-					<button className="absolute top-3 right-3" onClick={switchShow}>
+					<button className="absolute top-3 right-3 dark:text-black" onClick={switchShow}>
 						{!isShow ? (
 							<FaRegEye
 								size={20}
