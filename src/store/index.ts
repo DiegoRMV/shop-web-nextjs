@@ -3,3 +3,4 @@ export * from "./ui/ui-navbar";
 
 export * from "./cart/cart-update";
 
+export * from "./profile/profile";

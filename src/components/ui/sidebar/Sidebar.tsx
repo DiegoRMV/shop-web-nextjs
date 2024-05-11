@@ -53,7 +53,7 @@ export const Sidebar = () => {
 				</Suspense>
 
 				<Link
-					href={"/"}
+					href={"/auth/profile"}
 					onClick={closeMenu}
 					className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all dark:hover:bg-slate-800"
 				>

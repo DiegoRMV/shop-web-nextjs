@@ -1,29 +1,35 @@
-"use client"
-import Link from "next/link";
+"use client";
 import { titleFont } from "@/config/fonts";
 import { useShowPassword } from "@/store";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 
-export default function Login() {
+export default function Profile() {
 	const isShow = useShowPassword((state) => state.isShowPassword);
 	const switchShow = useShowPassword((state) => state.switchShowPassword);
 
 	const profile = {
 		name: "Jhon Doe",
-		email: "johndoe@gmail.com",
+		email: "jhondoe@gmail.com",
 		password: 12345,
 	};
+
 	return (
 		<div className="flex flex-col min-h-screen pt-20">
-			<h1 className={`${titleFont.className} text-4xl mb-5`}>Ingresar</h1>
+			<h1 className={`${titleFont.className} text-4xl mb-5`}>Perfil</h1>
 
 			<div className="flex flex-col">
-				<label htmlFor="email">Correo electrónico</label>
+				<label htmlFor="text">Nombre Completo</label>
 				<input
-					className="px-5 py-2 border bg-gray-200 rounded mb-5 text-black"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					type="text"
+					defaultValue={profile.name}
+				/>
+				<label htmlFor="email">Correo Electronico</label>
+				<input
+					className="px-5 py-2 border bg-gray-200 rounded mb-5"
 					type="email"
-					placeholder="jhondoe@gmail.com"
+					defaultValue={profile.email}
 				/>
 
 				<label htmlFor="password">Contraseña</label>
@@ -31,7 +37,7 @@ export default function Login() {
 					<input
 						className="border px-5 py-2 bg-gray-200 rounded w-full"
 						type={isShow ? "text " : "password"}
-						placeholder="******"
+						defaultValue={profile.password}
 					/>
 					<button className="absolute top-3 right-3" onClick={switchShow}>
 						{!isShow ? (
@@ -48,7 +54,7 @@ export default function Login() {
 					</button>
 				</div>
 
-				<button className="btn-primary">Ingresar</button>
+				<button className="btn-primary">Editar Perfil</button>
 
 				{/* divisor l ine */}
 				<div className="flex items-center my-5">
@@ -56,10 +62,6 @@ export default function Login() {
 					<div className="px-2 text-gray-800">O</div>
 					<div className="flex-1 border-t border-gray-500"></div>
 				</div>
-
-				<Link href="/auth/new-account" className="btn-secondary text-center">
-					Crear una nueva cuenta
-				</Link>
 			</div>
 		</div>
 	);

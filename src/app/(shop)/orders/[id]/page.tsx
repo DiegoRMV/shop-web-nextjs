@@ -19,6 +19,9 @@ interface Props {
 
 export default function Order({ params }: Props) {
 	const { id } = params;
+	let isPaid = true;
+	if (id === "124") isPaid = false;
+
 	return (
 		<div className="flex justify-center items-center mb-72 sm:px-10 px-4">
 			<div className="flex flex-col w-[1000px]">
@@ -27,16 +30,15 @@ export default function Order({ params }: Props) {
 					<div className="flex flex-col mt-5">
 						<div
 							className={clsx(
-								"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+								"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5 bg-green-600",
 								{
-									"bg-green-600": true,
-									"bg-red-500": false,
+									"bg-red-500": !isPaid,
 								}
 							)}
 						>
 							<IoCardOutline size={30} />
 							{/* <span className="mx-2">Pendiente de pago</span> */}
-							<span className="mx-2">Pagado</span>
+							<span className="mx-2">{isPaid ? "Pagado" : "No pagado"}</span>
 						</div>
 
 						{productsInCart.map((product) => (
@@ -92,16 +94,15 @@ export default function Order({ params }: Props) {
 						<div className="mt-5 mb-2 w-full">
 							<div
 								className={clsx(
-									"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
+									"flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5 bg-green-600",
 									{
-										"bg-green-600": true,
-										"bg-red-500": false,
+										"bg-red-500": !isPaid,
 									}
 								)}
 							>
 								<IoCardOutline size={30} />
 								{/* <span className="mx-2">Pendiente de pago</span> */}
-								<span className="mx-2">Pagado</span>
+								<span className="mx-2">{isPaid ? "Pagado" : "No pagado"}</span>
 							</div>
 						</div>
 					</div>

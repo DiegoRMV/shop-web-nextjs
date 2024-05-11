@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NewAccount() {
 	return (
-		<div className="flex flex-col min-h-screen pt-32 sm:pt-52">
+		<div className="flex flex-col min-h-screen pt-20">
 			<h1 className={`${titleFont.className} text-4xl mb-5`}>Nueva Cuenta</h1>
 
 			<div className="flex flex-col">
@@ -11,17 +11,28 @@ export default function NewAccount() {
 				<input
 					className="px-5 py-2 border bg-gray-200 rounded mb-5"
 					type="text"
+					placeholder="john Doe"
 				/>
 				<label htmlFor="email">Correo Electronico</label>
 				<input
 					className="px-5 py-2 border bg-gray-200 rounded mb-5"
 					type="email"
+					placeholder="jhondoe@gmail.com"
 				/>
 
-				<label htmlFor="email">Contraseña</label>
+				<label htmlFor="password">Contraseña</label>
 				<input
+					name="password"
 					className="px-5 py-2 border bg-gray-200 rounded mb-5"
-					type="email"
+					type="text"
+					placeholder="******"
+				/>
+				<label htmlFor="repeatPassword">Repetir Contraseña</label>
+				<input
+					name="repeatPassword"
+					className="px-5 py-2 border bg-gray-200 rounded mb-5"
+					type="text"
+					placeholder="******"
 				/>
 
 				<button className="btn-primary">Crear Cuenta</button>
