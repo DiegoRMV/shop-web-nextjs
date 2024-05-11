@@ -4,8 +4,13 @@ import { inter } from "@/config/fonts";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-	title: "Gx Shop",
+	title: "GxShop",
 	description: "Tienda de compras online",
+	icons: {
+		icon: ["/favicon.ico"],
+		apple: ["/app/logo-192.png?v=4"],
+		shortcut: ["/logo-192.png"],
+	},
 };
 
 export default function RootLayout({
