@@ -10,7 +10,7 @@ export default function Home({
 	searchParams: { search?: string };
 }) {
 	const search = searchParams.search;
-	console.log(search);
+	
 	let subtitle = "Todos los Productos";
 	if (search) {
 		subtitle = `Buscar: ${search}`;
@@ -24,9 +24,9 @@ export default function Home({
 	);
 
 	return (
-		<div className="px-2 sm:px-6 lg:px-10">
+		<>
 			<Title title="Tienda" subtitle={subtitle} className="mb-2" />
 			<ProductGrid products={result} />
-		</div>
+		</>
 	);
 }

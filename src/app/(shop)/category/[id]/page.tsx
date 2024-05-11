@@ -22,9 +22,6 @@ export default function PageCategory({ params }: Props) {
 		unisex: "Todos",
 	};
 
-	// if (Object.keys(labels).indexOf(id) > 0) {
-	// 	notFound();
-	// }
 	return (
 		<>
 			<Title

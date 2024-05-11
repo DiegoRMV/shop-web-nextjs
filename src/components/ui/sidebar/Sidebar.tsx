@@ -101,7 +101,7 @@ export const Sidebar = () => {
 				<div
 					id="dropdown"
 					className={clsx(
-						"z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-950",
+						"z-50 transition-all bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-950",
 						{
 							hidden: !dropdown,
 						}
@@ -160,7 +160,7 @@ export const Sidebar = () => {
 				</div>
 
 				<Link
-					href={"/"}
+					href={"/cart"}
 					onClick={closeMenu}
 					className="flex items-center mt-4 p-2 hover:bg-gray-100 rounded transition-all dark:hover:bg-slate-800"
 				>

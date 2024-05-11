@@ -12,10 +12,10 @@ export const Footer = () => {
 				<span> | Shop </span>
 				<span>{new Date().getFullYear()}</span>
 			</Link>
-			<Link href={"/"} className="mx-3">
+			<Link href={"#"} className="mx-3">
 				<span>Privacy & Legal</span>
 			</Link>
-			<Link href={"/"} className="mx-3">
+			<Link href={"#"} className="mx-3">
 				<span>Locations</span>
 			</Link>
 		</div>
