@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 	title: "GxShop",
 	description: "Tienda de compras online",
 	icons: {
-		icon: ["/favicon.ico"],
-		apple: ["/app/logo-192.png?v=4"],
+		icon: ["/favicon.ico?v=4"],
+		apple: ["/logo-192.png?v=4"],
 		shortcut: ["/logo-192.png"],
 	},
 };
